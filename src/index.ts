@@ -6,7 +6,10 @@ console.log("Hello World!");
 const app: Express = express();
 
 const server = http.createServer(app);
-server.listen(8080); //the server object listens on port 8080
+
 app.get('/',(req,res)=> {
-    res.json('Hello World')
+    res.status(200).json({response: 'Hello World'})
 })
+
+//the server object listens on port 8080
+server.listen(8080);
